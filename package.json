@@ -1,0 +1,45 @@
+{
+  "name": "obsidian-markxmind",
+  "version": "0.1.0",
+  "description": "An obsidian plugin to render XMindMark syntax as XMind mind maps in `xmind/xmindmark` code blocks.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "lint": "npx eslint .",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "author": "jinzcdev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinzcdev/obsidian-markxmind.git"
+  },
+  "homepage": "https://github.com/jinzcdev/obsidian-markxmind",
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "xmind",
+    "markxmind",
+    "xmindmark",
+    "mindmap"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "esbuild": "0.25.5",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "tslib": "2.4.0",
+    "typescript": "^5.8.3",
+    "prettier-plugin-organize-imports": "^4.1.0"
+  },
+  "dependencies": {
+    "@markxmind/markxmind-core": "^0.1.0",
+    "obsidian": "latest"
+  }
+}

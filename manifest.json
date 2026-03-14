@@ -1,0 +1,10 @@
+{
+  "id": "markxmind",
+  "name": "MarkXMind",
+  "version": "0.1.0",
+  "minAppVersion": "0.15.0",
+  "description": "Render XMindMark syntax as XMind mind maps in Obsidian using `xmind/xmindmark` code blocks.",
+  "author": "jinzcdev",
+  "authorUrl": "https://github.com/jinzcdev",
+  "isDesktopOnly": false
+}

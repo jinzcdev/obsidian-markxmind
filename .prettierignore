@@ -1,0 +1,10 @@
+node_modules
+main.js
+*.map
+package-lock.json
+data.json
+assets/
+docs/
+*.min.html
+*.min.js.*
+*.min.css.*

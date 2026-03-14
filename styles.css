@@ -1,0 +1,44 @@
+.mxm-codeblock-wrapper {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+  overflow: auto;
+}
+
+.mxm-svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mxm-svg-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mxm-svg-wrapper svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mxm-codeblock-empty,
+.mxm-codeblock-error {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.mxm-codeblock-empty {
+  color: var(--text-muted);
+  background: var(--background-secondary);
+}
+
+.mxm-codeblock-error {
+  color: var(--text-error);
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-error);
+}
