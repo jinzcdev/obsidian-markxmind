@@ -124,7 +124,10 @@ function displaySvg(host: HTMLElement, svgData: string): void {
     const doc = parser.parseFromString(svgData, 'image/svg+xml');
     const svgEl = doc.documentElement;
     if (svgEl && svgEl.tagName === 'svg') {
-      const imported = document.importNode(svgEl, true);
+      const imported = document.importNode(svgEl, true) as unknown as SVGElement;
+      imported.setAttribute('width', '100%');
+      imported.removeAttribute('height');
+      imported.setAttribute('preserveAspectRatio', 'xMidYMid meet');
       wrapper.appendChild(imported);
     } else {
       wrapper.createDiv({ cls: 'mxm-codeblock-error', text: 'Invalid SVG data' });

@@ -8,19 +8,18 @@
 }
 
 .mxm-svg-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: block;
+  width: 100%;
 }
 
 .mxm-svg-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
 
 .mxm-svg-wrapper svg {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
