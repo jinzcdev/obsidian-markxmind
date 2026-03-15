@@ -5,7 +5,7 @@
 
 Render **XMindMark** syntax (from [MarkXMind](https://github.com/jinzcdev/markxmind)) as XMind mind maps inside `xmind` code blocks in [Obsidian](https://obsidian.md).
 
-<img src="./docs/xmind-codeblock-demo.png" alt="XMindMark code block demo" width="70%">
+<img src="./docs/xmind-codeblock-demo.png" alt="XMindMark code block demo" width="75%">
 
 ## ✨ Features
 

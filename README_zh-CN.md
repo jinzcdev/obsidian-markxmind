@@ -5,7 +5,7 @@
 
 在 [Obsidian](https://obsidian.md) 中，将 [MarkXMind](https://github.com/jinzcdev/markxmind) 的 **XMindMark** 语法在 `xmind` 代码块内渲染为 XMind 思维导图。
 
-<img src="./docs/xmind-codeblock-demo.png" alt="XMindMark 代码块示例" width="70%">
+<img src="./docs/xmind-codeblock-demo.png" alt="XMindMark 代码块示例" width="75%">
 
 ## ✨ 功能
 
