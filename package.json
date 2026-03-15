@@ -1,6 +1,6 @@
 {
   "name": "obsidian-markxmind",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An obsidian plugin to render XMindMark syntax as XMind mind maps in `xmind/xmindmark` code blocks.",
   "main": "main.js",
   "type": "module",
