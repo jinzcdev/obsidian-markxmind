@@ -28,18 +28,18 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^16.11.6",
-    "esbuild": "0.25.5",
-    "@typescript-eslint/eslint-plugin": "^8.18.0",
-    "@typescript-eslint/parser": "^8.18.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-obsidianmd": "^0.1.9",
+    "globals": "^15.13.0",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
     "tslib": "2.4.0",
-    "typescript": "^5.8.3",
-    "prettier-plugin-organize-imports": "^4.1.0"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@markxmind/markxmind-core": "^0.1.0",
+    "esbuild": "^0.27.4",
     "obsidian": "latest"
   }
 }

@@ -3,6 +3,21 @@ import type { MapThemeMode } from '../settings';
 import { ensureSnowbrushLoaded } from './loader';
 import { darkTheme, lightTheme } from './theme';
 
+/** Minimal type for Snowbrush global (loaded from CDN) */
+interface SnowbrushExportEditor {
+  on(event: string, cb: () => void): void;
+  execAction?(action: string): void;
+  initInnerView(): void;
+  exportImage(opts: { format: string; skipFont: boolean }): Promise<{ data?: string }>;
+  getSheetModel?(): { changeTheme?(t: unknown): void };
+  destroy?(): void;
+}
+
+interface SnowbrushGlobal {
+  SheetEditor: new (opts: { el: HTMLElement; model: unknown }) => SnowbrushExportEditor;
+  Model: { Sheet: new (model: unknown) => unknown };
+}
+
 type RenderRecord = {
   host: HTMLElement;
   source: string;
@@ -20,12 +35,7 @@ function resolveTheme(themeMode: MapThemeMode): typeof lightTheme {
   return (isSystemDarkMode() ? darkTheme : lightTheme) as unknown as typeof lightTheme;
 }
 
-function applyMapTheme(
-  editor: { getSheetModel?: () => { changeTheme?: (t: unknown) => void } },
-  themeMode: MapThemeMode,
-): void {
-  if (!editor) return;
-
+function applyMapTheme(editor: SnowbrushExportEditor, themeMode: MapThemeMode): void {
   try {
     const sheetModel = editor.getSheetModel?.();
     if (!sheetModel) return;
@@ -35,7 +45,7 @@ function applyMapTheme(
   }
 }
 
-function disposeExportEditor(editor: { destroy?: () => void }): void {
+function disposeExportEditor(editor: SnowbrushExportEditor): void {
   if (!editor) return;
   try {
     editor.destroy?.();
@@ -57,16 +67,15 @@ export function disposeAllHosts(): void {
 
 async function exportMapToSvg(source: string, themeMode: MapThemeMode): Promise<string | null> {
   const model = createMapByXMindMark(source);
+  // Theme type from markxmind-core may not align with our theme shape
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   model.theme = resolveTheme(themeMode) as typeof model.theme;
 
   const tempContainer = document.createElement('div');
-  tempContainer.style.position = 'absolute';
-  tempContainer.style.left = '-9999px';
-  tempContainer.style.width = '1000px';
-  tempContainer.style.height = '1000px';
+  tempContainer.className = 'mxm-export-container';
   document.body.appendChild(tempContainer);
 
-  const SnowbrushRef = window.Snowbrush;
+  const SnowbrushRef = (window as Window & { Snowbrush?: SnowbrushGlobal }).Snowbrush;
   if (!SnowbrushRef?.SheetEditor || !SnowbrushRef?.Model?.Sheet) {
     document.body.removeChild(tempContainer);
     return null;
@@ -111,7 +120,15 @@ function displaySvg(host: HTMLElement, svgData: string): void {
     const img = wrapper.createEl('img', { attr: { src: svgData, alt: 'XMind mind map' } });
     img.addClass('mxm-svg-image');
   } else if (svgData.trim().startsWith('<')) {
-    wrapper.innerHTML = svgData;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgData, 'image/svg+xml');
+    const svgEl = doc.documentElement;
+    if (svgEl && svgEl.tagName === 'svg') {
+      const imported = document.importNode(svgEl, true);
+      wrapper.appendChild(imported);
+    } else {
+      wrapper.createDiv({ cls: 'mxm-codeblock-error', text: 'Invalid SVG data' });
+    }
   } else {
     wrapper.createDiv({ cls: 'mxm-codeblock-error', text: 'Invalid SVG data' });
   }

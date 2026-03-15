@@ -25,6 +25,13 @@
   display: block;
 }
 
+.mxm-export-container {
+  position: absolute;
+  left: -9999px;
+  width: 1000px;
+  height: 1000px;
+}
+
 .mxm-codeblock-empty,
 .mxm-codeblock-error {
   padding: 12px;

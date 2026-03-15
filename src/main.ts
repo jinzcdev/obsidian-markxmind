@@ -52,7 +52,8 @@ export default class MarkxmindPlugin extends Plugin {
   }
 
   async loadSettings(): Promise<void> {
-    this.settings = { ...DEFAULT_SETTINGS, ...(await this.loadData()) };
+    const data = (await this.loadData()) as Partial<MarkxmindPluginSettings> | null;
+    this.settings = { ...DEFAULT_SETTINGS, ...data };
   }
 
   async saveSettings(): Promise<void> {
