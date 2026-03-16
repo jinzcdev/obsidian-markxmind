@@ -25,7 +25,7 @@ export class MarkxmindSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName('Mind map theme')
-      .setDesc('The theme used to render XMind mind maps')
+      .setDesc('The theme used to render mind maps')
       .addDropdown((dropdown) =>
         dropdown
           .addOption('light', 'Light')

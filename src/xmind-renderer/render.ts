@@ -1,4 +1,4 @@
-import { createMapByXMindMark } from '@markxmind/markxmind-core';
+import { createMapByXMindMark, ThemeModel } from '@markxmind/markxmind-core';
 import type { MapThemeMode } from '../settings';
 import { ensureSnowbrushLoaded } from './loader';
 import { darkTheme, lightTheme } from './theme';
@@ -29,10 +29,10 @@ function isSystemDarkMode(): boolean {
   return document.body.classList.contains('theme-dark');
 }
 
-function resolveTheme(themeMode: MapThemeMode): typeof lightTheme {
-  if (themeMode === 'dark') return darkTheme as unknown as typeof lightTheme;
+function resolveTheme(themeMode: MapThemeMode): ThemeModel {
+  if (themeMode === 'dark') return darkTheme;
   if (themeMode === 'light') return lightTheme;
-  return (isSystemDarkMode() ? darkTheme : lightTheme) as unknown as typeof lightTheme;
+  return isSystemDarkMode() ? darkTheme : lightTheme;
 }
 
 function applyMapTheme(editor: SnowbrushExportEditor, themeMode: MapThemeMode): void {
@@ -67,9 +67,7 @@ export function disposeAllHosts(): void {
 
 async function exportMapToSvg(source: string, themeMode: MapThemeMode): Promise<string | null> {
   const model = createMapByXMindMark(source);
-  // Theme type from markxmind-core may not align with our theme shape
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  model.theme = resolveTheme(themeMode) as typeof model.theme;
+  model.theme = resolveTheme(themeMode);
 
   const tempContainer = document.createElement('div');
   tempContainer.className = 'mxm-export-container';

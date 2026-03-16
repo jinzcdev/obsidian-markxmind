@@ -1,4 +1,6 @@
-export const lightTheme = {
+import type { ThemeModel } from '@markxmind/markxmind-core';
+
+export const lightTheme: ThemeModel = {
   id: 'f8c8e44f-4a4d-43a7-8381-11a152eaf8a3',
   centralTopic: {
     id: 'c5069014-b642-4cf5-bb50-1d29bd0df2a1',
@@ -195,9 +197,9 @@ export const lightTheme = {
     properties: {},
   },
   skeletonThemeId: 'db4a5df4db39a8cd1310ea55ea',
-} as const;
+};
 
-export const darkTheme = {
+export const darkTheme: ThemeModel = {
   id: 'dark-theme-pro',
   centralTopic: {
     id: 'c5069014-b642-4cf5-bb50-1d29bd0df2a1',
@@ -407,4 +409,4 @@ export const darkTheme = {
     properties: {},
   },
   skeletonThemeId: 'db4a5df4db39a8cd1310ea55ea',
-} as const;
+};
