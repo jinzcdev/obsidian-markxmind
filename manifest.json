@@ -1,7 +1,7 @@
 {
   "id": "markxmind",
   "name": "MarkXMind",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minAppVersion": "0.15.0",
   "description": "Render XMindMark syntax as XMind mind maps in `xmind/xmindmark` code blocks.",
   "author": "Zhichao Jin",
