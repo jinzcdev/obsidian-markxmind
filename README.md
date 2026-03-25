@@ -1,11 +1,14 @@
 # MarkXMind Plugin for Obsidian
 
+[![GitHub Release](https://img.shields.io/github/v/release/jinzcdev/obsidian-markxmind)](https://github.com/jinzcdev/obsidian-markxmind/releases/latest)
+[![Obsidian](https://img.shields.io/badge/Obsidian-0.15.0%2B-7C3AED?logo=obsidian&logoColor=white)](https://obsidian.md)
+[![Platform](https://img.shields.io/badge/platform-desktop%20%26%20mobile-5865F2)](https://github.com/jinzcdev/obsidian-markxmind/blob/main/manifest.json)
 [![License](https://img.shields.io/github/license/jinzcdev/obsidian-markxmind.svg)](https://github.com/jinzcdev/obsidian-markxmind/blob/main/LICENSE)
-[![中文文档](https://img.shields.io/badge/中文文档-点击查看-blue)](README_zh-CN.md)
+[![中文文档](https://img.shields.io/badge/简体中文-查看-blue)](README_zh-CN.md)
 
 Render **XMindMark** syntax (from [MarkXMind](https://github.com/jinzcdev/markxmind)) as XMind mind maps inside `xmind` code blocks in [Obsidian](https://obsidian.md).
 
-<img src="./docs/xmind-codeblock-demo.png" alt="XMindMark code block demo" width="75%">
+![XMindMark code block demo](./docs/xmind-codeblock-demo.png)
 
 ## ✨ Features
 
@@ -24,8 +27,8 @@ Render **XMindMark** syntax (from [MarkXMind](https://github.com/jinzcdev/markxm
 ### Manual Installation
 
 1. Create the plugin folder in your vault: `.obsidian/plugins/markxmind/`
-2. Copy these files into it: `main.js`, `styles.css`, `manifest.json`
-3. In Obsidian Settings → Community plugins, enable the **MarkXMind** plugin
+2. Copy these files into it: `main.js`, `styles.css`, `manifest.json` (Download the latest version from [Releases](https://github.com/jinzcdev/obsidian-markxmind/releases/latest)).
+3. In Obsidian **Settings** → **Community plugins**, enable the **MarkXMind** plugin
 
 ## 📝 Usage Example
 

@@ -1,11 +1,14 @@
 # MarkXMind Plugin for Obsidian
 
+[![GitHub Release](https://img.shields.io/github/v/release/jinzcdev/obsidian-markxmind)](https://github.com/jinzcdev/obsidian-markxmind/releases/latest)
+[![Obsidian](https://img.shields.io/badge/Obsidian-0.15.0%2B-7C3AED?logo=obsidian&logoColor=white)](https://obsidian.md)
+[![Platform](https://img.shields.io/badge/platform-desktop%20%26%20mobile-5865F2)](https://github.com/jinzcdev/obsidian-markxmind/blob/main/manifest.json)
 [![License](https://img.shields.io/github/license/jinzcdev/obsidian-markxmind.svg)](https://github.com/jinzcdev/obsidian-markxmind/blob/main/LICENSE)
-[![英文文档](https://img.shields.io/badge/英文文档-点击查看-blue)](README.md)
+[![英文文档](https://img.shields.io/badge/English-View-blue)](README.md)
 
 在 [Obsidian](https://obsidian.md) 中，将 [MarkXMind](https://github.com/jinzcdev/markxmind) 的 **XMindMark** 语法在 `xmind` 代码块内渲染为 XMind 思维导图。
 
-<img src="./docs/xmind-codeblock-demo.png" alt="XMindMark 代码块示例" width="75%">
+![XMindMark 代码块示例](./docs/xmind-codeblock-demo.png)
 
 ## ✨ 功能
 
@@ -24,8 +27,8 @@
 ### 手动安装
 
 1. 在仓库中创建插件目录：`.obsidian/plugins/markxmind/`
-2. 将以下文件复制到该目录：`main.js`、`styles.css`、`manifest.json`
-3. 在 Obsidian 设置 → 社区插件中启用 **MarkXMind** 插件
+2. 将以下文件复制到该目录：`main.js`、`styles.css`、`manifest.json`（从 [Releases](https://github.com/jinzcdev/obsidian-markxmind/releases/latest) 下载最新版本）。
+3. 在 Obsidian **设置** → **社区插件** 中启用 **MarkXMind** 插件
 
 ## 📝 使用示例
 
